@@ -40,6 +40,9 @@ public class FieldMakerBuilder implements IFieldMakerBuilder, Serializable {
 			case inputText:
 				obj = factory.getInputTextFieldMaker();	
 				break;
+			case textArea:
+				obj = factory.getInputTextAreaFieldMaker();
+				break;
 			case commandButton:
 				obj = factory.getCommandButtonMaker();
 				break;

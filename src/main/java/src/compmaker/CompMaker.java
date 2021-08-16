@@ -72,8 +72,19 @@ public class CompMaker implements Serializable, ICompMaker {
 	@Override
 	public void addFieldMaker(IFieldMaker fm) {
 		publisher.publish("CompMaker.addFieldMaker()");
-
-		getFieldMakersList().add(fm);
+		if(fm.getName() == null || fieldNameNotExist(fm.getName().toString())) {
+			getFieldMakersList().add(fm);
+		}
+	}
+	
+	private Boolean fieldNameNotExist(String sname) {
+		Boolean bResult = true;
+		for(IFieldMaker maker : getFieldMakersList()) {
+			if(maker.getName() != null && maker.getName().toString().matches(sname)) {
+				bResult = false;
+			}
+		}		
+		return bResult;		
 	}
 	
 	@Override
@@ -191,7 +202,7 @@ public class CompMaker implements Serializable, ICompMaker {
 		IFieldMaker result = null;
 		
 		for(IFieldMaker maker : getFieldMakersList()) {
-			if(maker.getName().matches(sname)) {
+			if(maker.getName() != null && maker.getName().matches(sname)) {
 				result = maker;
 			}
 		}		

@@ -7,15 +7,21 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import src.fieldmakers.CommandButtonMaker;
+import src.fieldmakers.InputTextAreaFieldMaker;
 import src.fieldmakers.InputTextFieldMaker;
+import src.inter.InputTextAreaFieldMakerQualifier;
+import src.inter.InputTextFieldMakerQualifier;
 
 @SessionScoped
 public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializable{
 	
-	@Inject 
+	@Inject @InputTextFieldMakerQualifier
 	private InputTextFieldMaker inputTextFieldMaker;
+	@Inject @InputTextAreaFieldMakerQualifier
+	private InputTextAreaFieldMaker inputTextAreaFieldMaker;
 	@Inject
 	private CommandButtonMaker commandButtonMaker;
+	
 
 	@Override
 	public CommandButtonMaker getCommandButtonMaker() throws CloneNotSupportedException {
@@ -33,6 +39,15 @@ public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializab
 
 	public void setInputTextFieldMaker(InputTextFieldMaker inputTextFieldMaker) {
 		this.inputTextFieldMaker = inputTextFieldMaker;
+	}
+
+	@Override
+	public InputTextAreaFieldMaker getInputTextAreaFieldMaker() throws CloneNotSupportedException {
+		return inputTextAreaFieldMaker.clone();
+	}
+
+	public void setInputTextAreaFieldMaker(InputTextAreaFieldMaker inputTextAreaFieldMaker) {
+		this.inputTextAreaFieldMaker = inputTextAreaFieldMaker;
 	}
 	
 	

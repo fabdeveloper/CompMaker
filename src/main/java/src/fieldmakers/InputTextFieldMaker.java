@@ -6,6 +6,7 @@ import javax.enterprise.context.SessionScoped;
 
 import src.inter.InputTextFieldMakerQualifier;
 
+@InputTextFieldMakerQualifier
 @SessionScoped
 public class InputTextFieldMaker extends AbstractFieldMaker implements Serializable {
 
