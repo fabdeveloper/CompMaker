@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://primefaces.org/ui"
+	xmlns:p="http://java.sun.com/jsf/html">
+<p:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Insert title here</title>
+
+</p:head>
+<p:body>
+<p:form>
+<!-- 		<p:panelGrid border="1" columns="1"> -->
+
+<!-- 		<div style="width:100%;"> -->
+<!-- 		<p:panelGrid border="1" columns="3"> -->
+
+<!-- 			<div> -->
+<!-- 				<p:panelGrid columns="1"> -->
+					<p:inputText value="#{documentCreatorBB.compMaker.fieldName}"></p:inputText>
+					<p:commandButton  value="new" action="#{documentCreatorBB.reset()}"></p:commandButton>
+					<p:commandButton value="add" action="#{documentCreatorBB.addField()}" disabled="#{documentCreatorBB.botonAddDisabled()}"></p:commandButton>
+					<p:commandButton value="remove" action="#{documentCreatorBB.removeField()}" disabled="#{documentCreatorBB.botonRemoveDisabled()}"></p:commandButton>
+		
+<!-- 				</p:panelGrid> -->
+<!-- 			</div> -->
+
+			<ui:selectOneMenu  value="#{documentCreatorBB.compMaker.fieldType}">
+				<c:selectItems value="#{documentCreatorBB.compMaker.fieldTypesList}" ></c:selectItems>
+				<ui:ajax event="itemSelect" process="@this" update="@this"
+					listener="#{documentCreatorBB.listenerTypes()}" />
+			</ui:selectOneMenu>
+
+<!--  -->			<p:selectOneListbox  value="#{documentCreatorBB.makerNameSelected}"> 
+				<c:selectItems value="#{documentCreatorBB.makersNamesList}" ></c:selectItems>
+			</p:selectOneListbox>
+
+<!-- 		</p:panelGrid> -->
+<!-- 		</div> -->
+<!-- 		<div style="width:100%; height:80%;"> -->
+			<p:inputTextarea value="#{documentCreatorBB.compMaker.document}"></p:inputTextarea>
+<!-- 			</div> -->
+
+<!-- 		</p:panelGrid> -->
+
+</p:form>
+
+	<p:messages>
+		<p:message></p:message>
+	</p:messages>
+</p:body>
+</html>
