@@ -4,25 +4,36 @@ import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
-import javax.inject.Singleton;
-
 import src.fieldmakers.CommandButtonMaker;
 import src.fieldmakers.InputTextAreaFieldMaker;
 import src.fieldmakers.InputTextFieldMaker;
-import src.inter.InputTextAreaFieldMakerQualifier;
-import src.inter.InputTextFieldMakerQualifier;
+import src.fieldmakers.SelectOneListBoxFieldMaker;
+import src.fieldmakers.SelectOneMenuFieldMaker;
 
 @SessionScoped
 public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializable{
 	
-	@Inject @InputTextFieldMakerQualifier
+	@Inject 
 	private InputTextFieldMaker inputTextFieldMaker;
-	@Inject @InputTextAreaFieldMakerQualifier
+	@Inject 
 	private InputTextAreaFieldMaker inputTextAreaFieldMaker;
+	@Inject
+	private SelectOneMenuFieldMaker selectOneMenuFieldMaker;
+	@Inject
+	private SelectOneListBoxFieldMaker selectOneListBoxFieldMaker;
 	@Inject
 	private CommandButtonMaker commandButtonMaker;
 	
 
+	
+	public SelectOneMenuFieldMaker getSelectOneMenuFieldMaker() throws CloneNotSupportedException {
+		return selectOneMenuFieldMaker.clone();
+	}
+
+	public void setSelectOneMenuFieldMaker(SelectOneMenuFieldMaker selectOneMenuFieldMaker) {
+		this.selectOneMenuFieldMaker = selectOneMenuFieldMaker;
+	}
+	
 	@Override
 	public CommandButtonMaker getCommandButtonMaker() throws CloneNotSupportedException {
 		return commandButtonMaker.clone();
@@ -48,6 +59,15 @@ public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializab
 
 	public void setInputTextAreaFieldMaker(InputTextAreaFieldMaker inputTextAreaFieldMaker) {
 		this.inputTextAreaFieldMaker = inputTextAreaFieldMaker;
+	}
+
+	@Override
+	public SelectOneListBoxFieldMaker getSelectOneListBoxFieldMaker() throws CloneNotSupportedException {
+		return selectOneListBoxFieldMaker.clone();
+	}
+
+	public void setSelectOneListBoxFieldMaker(SelectOneListBoxFieldMaker selectOneListBoxFieldMaker) {
+		this.selectOneListBoxFieldMaker = selectOneListBoxFieldMaker;
 	}
 	
 	

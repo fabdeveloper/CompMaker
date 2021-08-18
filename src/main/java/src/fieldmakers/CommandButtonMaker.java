@@ -36,26 +36,6 @@ public class CommandButtonMaker extends AbstractFieldMaker {
 		
 		return (CommandButtonMaker)setAll(nuevo);  
 	} 
-	
-//	@Override
-//	public void generateVarNames() {
-//		super.generateVarNames();
-//		
-//		// generar variables propias
-//		// ...
-//		
-//	}
-	
-//	@Override
-//	public String generateComments() {
-//		String com = super.generateComments();
-//		
-//		// generar comentarios propios
-//		// ...
-//		
-//		
-//		return com;
-//	}
 
 
 

@@ -39,6 +39,19 @@ public abstract class AbstractFieldMaker implements IFieldMaker {
 	public void setType(FieldTypes type) {
 		this.type = type;
 	}
+	
+	@Override
+	public String makeAttributes() {
+		
+		String sAttributes = "";
+
+		sAttributes += "<composite:attribute name=\"" + getNombreVarLabel()  + "\" default=\"" + getsDefaultLabel() +  "\"></composite:attribute>" + "\n";
+		sAttributes += "<composite:attribute name=\"" + getNombreVarField() + "\"></composite:attribute>" + "\n";
+		sAttributes += "<composite:attribute name=\"" + getNombreVarRendered() + "\" type=\"java.lang.Boolean\" default=\"true\"></composite:attribute>" + "\n";
+		sAttributes += "<composite:attribute name=\"" + getNombreVarDisabled() + "\" type=\"java.lang.Boolean\" default=\"false\"></composite:attribute>" + "\n";		
+		
+		return sAttributes;
+	}
 
 	@Override
 	public void makeIt() {

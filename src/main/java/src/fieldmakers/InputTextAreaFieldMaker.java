@@ -4,11 +4,9 @@ import java.io.Serializable;
 
 import javax.enterprise.context.SessionScoped;
 
-import src.inter.InputTextAreaFieldMakerQualifier;
 
-@InputTextAreaFieldMakerQualifier
 @SessionScoped
-public class InputTextAreaFieldMaker extends InputTextFieldMaker implements Serializable {
+public class InputTextAreaFieldMaker extends AbstractFieldMaker implements Serializable {
 	
 	
 	

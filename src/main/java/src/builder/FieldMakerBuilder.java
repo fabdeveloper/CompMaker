@@ -46,6 +46,12 @@ public class FieldMakerBuilder implements IFieldMakerBuilder, Serializable {
 			case commandButton:
 				obj = factory.getCommandButtonMaker();
 				break;
+			case selectOneMenu:
+				obj = factory.getSelectOneMenuFieldMaker();
+				break;
+			case selectOneListBox:
+				obj = factory.getSelectOneListBoxFieldMaker();
+				break;
 				default:;
 			}
 			if(obj != null) {

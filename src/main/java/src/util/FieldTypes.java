@@ -4,6 +4,7 @@ public enum FieldTypes {
 	inputText,
 	textArea,
 	selectOneMenu,
+	selectOneListBox,
 	commandButton
 
 }
