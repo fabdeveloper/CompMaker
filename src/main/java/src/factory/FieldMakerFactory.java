@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import src.fieldmakers.CommandButtonMaker;
+import src.fieldmakers.DataTableFieldMaker;
 import src.fieldmakers.InputTextAreaFieldMaker;
 import src.fieldmakers.InputTextFieldMaker;
 import src.fieldmakers.SelectOneListBoxFieldMaker;
@@ -23,9 +24,14 @@ public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializab
 	private SelectOneListBoxFieldMaker selectOneListBoxFieldMaker;
 	@Inject
 	private CommandButtonMaker commandButtonMaker;
+	@Inject
+	private DataTableFieldMaker dataTableFieldMaker;
 	
 
-	
+
+
+
+	@Override
 	public SelectOneMenuFieldMaker getSelectOneMenuFieldMaker() throws CloneNotSupportedException {
 		return selectOneMenuFieldMaker.clone();
 	}
@@ -68,6 +74,15 @@ public class FieldMakerFactory implements IAbstractFieldMakerFactory, Serializab
 
 	public void setSelectOneListBoxFieldMaker(SelectOneListBoxFieldMaker selectOneListBoxFieldMaker) {
 		this.selectOneListBoxFieldMaker = selectOneListBoxFieldMaker;
+	}
+
+	@Override
+	public DataTableFieldMaker getDataTableFieldMaker() throws CloneNotSupportedException {
+		return dataTableFieldMaker.clone();
+	}
+
+	public void setDataTableFieldMaker(DataTableFieldMaker dataTableFieldMaker) {
+		this.dataTableFieldMaker = dataTableFieldMaker;
 	}
 	
 	

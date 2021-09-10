@@ -166,9 +166,9 @@ public class CompWriter implements ICompWriter {
 		document += writeAttributes();
 		document += writeCloseInterface();
 		document += writeOpenImplementation();
-		document += writeOpenForm();
+//		document += writeOpenForm();
 		document += writeImplementation();
-		document += writeCloseForm();
+//		document += writeCloseForm();
 		document += writeCloseImplementation();
 		document += writeCloseBody();
 		document += writeFooter();

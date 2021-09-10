@@ -52,6 +52,9 @@ public class FieldMakerBuilder implements IFieldMakerBuilder, Serializable {
 			case selectOneListBox:
 				obj = factory.getSelectOneListBoxFieldMaker();
 				break;
+			case dataTable:
+				obj = factory.getDataTableFieldMaker();
+				break;
 				default:;
 			}
 			if(obj != null) {

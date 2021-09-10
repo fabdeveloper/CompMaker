@@ -5,9 +5,9 @@ import src.util.FieldTypes;
 
 public interface IFieldMakerBuilder {
 
-	void reset();
+	public void reset();
 
-	IFieldMaker build();
+	public IFieldMaker build();
 
 	public void setName(String name);
 	public String getName();

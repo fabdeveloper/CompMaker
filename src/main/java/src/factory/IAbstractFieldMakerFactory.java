@@ -1,6 +1,7 @@
 package src.factory;
 
 import src.fieldmakers.CommandButtonMaker;
+import src.fieldmakers.DataTableFieldMaker;
 import src.fieldmakers.IFieldMaker;
 import src.fieldmakers.InputTextAreaFieldMaker;
 import src.fieldmakers.InputTextFieldMaker;
@@ -14,6 +15,8 @@ public interface IAbstractFieldMakerFactory {
 	public InputTextAreaFieldMaker getInputTextAreaFieldMaker()  throws CloneNotSupportedException;
 	public SelectOneMenuFieldMaker getSelectOneMenuFieldMaker() throws CloneNotSupportedException;
 	public SelectOneListBoxFieldMaker getSelectOneListBoxFieldMaker() throws CloneNotSupportedException;
+	public DataTableFieldMaker getDataTableFieldMaker() throws CloneNotSupportedException;
+
 
 
 
